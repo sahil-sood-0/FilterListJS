@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <title>My Contacts</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">
+        My Contacts
+        </h1>
+
+        <input type="text" id="filterInput" placeholder="Search Names...">
+
+        <ul id = "names" class="collection with-header">
+           
+            <li class = "collection-header">
+                <h5>A</h5>
+            </li>
+
+            <li class="collection-item">
+                <a href="#">Abhay</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Abishek</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Acharya</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Adamya</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Adharshila</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Agrim</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Ajay</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Akshay</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Akshita</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Alok</a>
+            </li>
+
+
+            <li class = "collection-header">
+                <h5>B</h5>
+            </li>
+
+            <li class="collection-item">
+                <a href="#">Babli</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Balaji</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Banta</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bawa</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bhavesh</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bhavneesh</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bhrigu</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Billing</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bsnl</a>
+            </li>
+
+
+            <li class = "collection-header">
+                <h5>C</h5>
+            </li>
+
+
+            <li class="collection-item">
+                <a href="#">Cable</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Carnation</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Chaitanya</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Chandan</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Chinki</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Cookie</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Customer</a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // Get input element
+        let filterInput = document.getElementById('filterInput');
+        // Add event listener
+        filterInput.addEventListener('keyup', filterNames);
+
+        function filterNames(){
+            // console.log(1);
+            // Get value of the input
+            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+            // console.log(filterValue); FOR CHECKING
+
+            // GET NAMES from ul
+            let ul = document.getElementById('names');
+            // GET ITEMS (DATA) li from ul
+            let li = ul.querySelectorAll('li.collection-item');
+
+            // LOOP THROUGH all
+            for(let i=0;i<li.length;i++){
+                let a = li[i].getElementsByTagName('a')[0];
+
+            // IF Matches
+            if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1){
+                li[i].style.display = '';
+            }
+            else{
+                li[i].style.display = 'none';
+            }
+            }
+
+        }
+    </script>
+</body>
+</html>
